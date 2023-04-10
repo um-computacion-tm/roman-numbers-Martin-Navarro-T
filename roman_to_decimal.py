@@ -15,7 +15,6 @@ def roman_to_decimal(roman):
             total += 10
     return total
 
-
 if __name__ == '__main__':
     unittest.main()
     
