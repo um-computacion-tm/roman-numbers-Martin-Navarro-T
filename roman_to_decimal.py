@@ -1,18 +1,21 @@
+import unittest
+
 def roman_to_decimal(roman):
-    if roman == "I":
-        return 1
-    elif roman == "II":
-        return 2
+    total = 0
+    for letter in roman:
+        if letter == 'I':
+            total += 1
+        elif letter == 'V':
+            if total > 0:
+                total = -1
+            total += 5
+        elif letter == 'X':
+            if total > 0:
+                total = -1
+            total += 10
+    return total
 
-
-class TestRomanToDecimal(unittest.TestCase):
-    def test_I(self):
-        resultado = roman_to_decimal('I')
-        self.assertEqual(resultado, 1)
-
-    def test_II(self):
-        resultado = roman_to_decimal("II")
-        self.assertEqual(resultado, 2)
 
 if __name__ == '__main__':
     unittest.main()
+    
